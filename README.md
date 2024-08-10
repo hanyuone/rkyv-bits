@@ -16,3 +16,7 @@ To replicate the bug:
 1. Run `cargo install` at the root level.
 2. Run `cargo run -p local` to create the file at `wasm/public/archived`.
 3. Go into `wasm` and run `trunk serve` to spin up a local server.
+4. Go to the address `localhost:8080` on any browser.
+
+There should be nothing displayed - check the console, there should be a detailed
+error message.
