@@ -1,3 +1,7 @@
 [workspace]
-
 members = ["local", "wasm"]
+
+[patch.crates-io]
+rkyv = { git = "https://github.com/rkyv/rkyv" }
+bytecheck = { git = "https://github.com/rkyv/bytecheck" }
+rancor = { git = "https://github.com/rkyv/rancor" }

@@ -1,6 +1,7 @@
 extern crate console_error_panic_hook;
 
-use local::Foo;
+use local::ArchivedFoo;
+use rkyv::rancor::Error;
 use wasm_bindgen::prelude::wasm_bindgen;
 use web_sys::window;
 
@@ -16,7 +17,7 @@ async fn main() {
         .await
         .expect("Could fetch text");
 
-    let foo = rkyv::check_archived_root::<Foo>(archived_bytes.as_bytes())
+    let foo = rkyv::access::<ArchivedFoo, Error>(archived_bytes.as_bytes())
         .expect("rkyv unarchive successful");
 
     // Displays it on HTTP
